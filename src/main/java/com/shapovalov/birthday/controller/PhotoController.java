@@ -26,7 +26,7 @@ public class PhotoController {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Ошибка при загрузке фото");
+                    .body("Ошибка при загрузке фото" + e.getMessage());
         }
     }
     @GetMapping("/{personId}")

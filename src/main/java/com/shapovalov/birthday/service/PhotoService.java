@@ -59,7 +59,9 @@ public class PhotoService {
         // сохраняем с правильным именем файла
         String fileName = personId + extension;
         Path filePath = uploadPath.resolve(fileName);
-        file.transferTo(filePath.toFile());
+
+        //file.transferTo(filePath.toFile());
+        file.transferTo(filePath);
 
         // сохраняем в бд
         person.setPhotoFileName(fileName);
